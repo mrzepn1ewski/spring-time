@@ -1,0 +1,15 @@
+
+
+CREATE TABLE brand(
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(80) NOT NULL
+);
+
+CREATE TABLE car(
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    brand_id BIGINT NOT NULL,
+    model VARCHAR (100) NOT NULL,
+    created timestamp DEFAULT CURRENT_TIMESTAMP
+);
+
+ALTER TABLE car ADD CONSTRAINT car_mark_id FOREIGN KEY (brand_id) REFERENCES brand(id);
